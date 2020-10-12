@@ -3,7 +3,11 @@ const {Task} = require ('../models')
 class TaskController {
     static async getAllTask (req, res, next){
         try {
-            const tasks = await Task.findAll()
+            const tasks = await Task.findAll({
+                where: {
+                    organization: req.decodedUser.organization
+                }
+            })
             res.status(200).json(tasks)
         } catch (error) {
             next (error)
