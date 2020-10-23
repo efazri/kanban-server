@@ -10,8 +10,7 @@ function authorization (req, res, next){
             }
         }
         else {
-            if (task.UserId === req.decodedUser.id){
-
+            if (task.UserId == req.decodedUser.id){
                 next()
             }
             else {
