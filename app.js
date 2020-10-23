@@ -14,6 +14,6 @@ app.use(cors())
 
 app.use(router)
 
-app.listen(port, function (){
+app.listen(PORT, function (){
     console.log(`listening port: ${port}`)
 })
