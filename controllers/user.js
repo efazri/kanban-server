@@ -41,7 +41,8 @@ class UserController {
             if (correctPassword){
                 const access_token = jwt.sign({
                     id: user.id,
-                    email: user.email
+                    email: user.email,
+                    organization: user.organization
                 }, process.env.JWT_SECRET)
                 res.status(200).json({
                     access_token
