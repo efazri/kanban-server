@@ -58,7 +58,6 @@ class TaskController {
                 where : {id},
                 returning : true
             })
-            console.log(task)
             res.status(201).json(task[1][0])
         } catch (error) {
             next(error)

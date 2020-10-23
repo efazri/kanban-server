@@ -16,10 +16,16 @@ module.exports = (sequelize, DataTypes) => {
   Task.init({
     title: DataTypes.STRING,
     category: DataTypes.STRING,
-    UserId: DataTypes.INTEGER
+    UserId: DataTypes.INTEGER,
+    organization: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Task',
+    hooks: {
+      beforeCreate (task) {
+        task.organization = 'hacktiv8'
+      }
+    }
   });
   return Task;
 };
